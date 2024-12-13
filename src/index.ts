@@ -1,9 +1,12 @@
-import express from 'express';
-import serverCofig from './config/serverCofig';
+import express, { Application } from 'express';
+import serverConfig from './config/serverConfig';
+import apiRouter from './routes';
 
-const app = express();
+const app: Application = express();
 
-app.listen(serverCofig.PORT, () => {
-    console.log(`Server started at *:${serverCofig.PORT}`);
-    console.log('wow')
-})
+app.use('/api', apiRouter);
+
+app.listen(serverConfig.PORT, () => {
+    console.log(`Server started at *:${serverConfig.PORT}`);
+    // console.log(serverConfig.REDIS_HOST, serverConfig.REDIS_PORT);
+});
