@@ -1,12 +1,7 @@
 import dotenv from 'dotenv';
+import Config from '../types/connectionInterface';
 
 dotenv.config();
-
-interface Config {
-    PORT: number;
-    REDIS_HOST: string;
-    REDIS_PORT: number;
-}
 
 const config: Config = {
     PORT: Number(process.env.PORT) || 3000,

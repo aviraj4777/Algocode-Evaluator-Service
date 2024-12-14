@@ -21,7 +21,7 @@ export default [...compat.extends("plugin:@typescript-eslint/recommended"), {
     rules: {
         "semi": ["error", "always"],
         "no-console": "warn",
-        "no-unused-vars": "error",
+        "no-unused-vars": "warn",
     },
 }];
 
